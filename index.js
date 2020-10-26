@@ -10,8 +10,15 @@ class CountdownTimer {
     this.refs = refs;
     this.targetDate = targetDate;
 
-    this.updateTimer(this.getTimeComponents());
+    this.init();
+    this.start();
+  }
 
+  init() {
+    this.updateTimer(this.getTimeComponents());
+  }
+
+  start() {
     setInterval(() => {
       this.updateTimer(this.getTimeComponents());
     }, 1000);
